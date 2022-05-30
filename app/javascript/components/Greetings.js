@@ -7,7 +7,6 @@ const GET_GREETING_REQUEST = "GET_GREETING_REQUEST";
 const GET_GREETING_SUCCESS = "GET_GREETING_SUCCESS";
 
 function getGreetings() {
-  console.log('get things action!')
   return dispatch => {
     dispatch({ type: GET_GREETING_REQUEST });
     return fetch(`v1/greetings.json`)
