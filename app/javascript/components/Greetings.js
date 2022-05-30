@@ -4,10 +4,23 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 const GET_GREETING_REQUEST = "GET_GREETING_REQUEST";
+const GET_GREETING_SUCCESS = "GET_GREETING_SUCCESS";
+
 function getGreetings() {
   console.log('get things action!')
+  return dispatch => {
+    dispatch({ type: GET_GREETING_REQUEST });
+    return fetch(`v1/greetings.json`)
+      .then(response => response.json() )
+      .then(json => dispatch(getGreetingsSuccess(json)))
+      .catch(error => console.log(error));
+  };
+}
+
+export function getGreetingsSuccess(json) {
   return {
-    type: GET_GREETING_REQUEST,
+    type: GET_GREETING_SUCCESS,
+    json
   }
 }
 
@@ -29,9 +42,6 @@ const structuredSelector = createStructuredSelector({
     greeting: (state) => state.greeting
 });
 
-Greetings.propTypes = {
-  greeting: propTypes.string.isRequired
-};
 
 const mapDispatchToProps = { getGreetings };
 

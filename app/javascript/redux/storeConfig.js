@@ -8,6 +8,11 @@ const initialState = {
 
 function rootReducer(state, action) {
     switch (action.type) {
+        case 'GET_GREETING_SUCCESS':
+            return {
+                ...state,
+                greeting: action.json.data
+            }
         default:
             return state;
     }
