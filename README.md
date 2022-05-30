@@ -12,6 +12,35 @@ This project contains the first trial at connecting React on the front-end to Ru
 - Rubocop
 - Git
 
+## Setup
+Clone the repo and run bundle install in the command line to install the dependencies
+
+```bash
+$ git clone https://github.com/clintonjosephs/hello-rails-react.git
+$ cd hello-rails-react
+```
+
+## Install gems with:
+
+```bash
+$ bundle install
+```
+
+## Install style linters with
+```bash
+$ npm install
+$ yarn install
+```
+
+## Start rails server (puma)
+
+```bash
+$ rails server
+```
+
+Open [http://localhost:3000/](http://localhost:3000/) in your browser
+
+
 ## Author
 
 👤 **Clinton Mbonu**
