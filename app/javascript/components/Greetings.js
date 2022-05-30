@@ -1,7 +1,7 @@
 import React from "react"
 import propTypes from "prop-types";
 
-class Hello extends React.Component {
+class Greetings extends React.Component {
   render () {
     return (
        <React.Fragment>
@@ -11,8 +11,8 @@ class Hello extends React.Component {
   }
 }
 
-Hello.propTypes = {
+Greetings.propTypes = {
   greeting: propTypes.string.isRequired
 };
 
-export default Hello
+export default Greetings
